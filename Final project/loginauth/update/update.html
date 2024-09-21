@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="update.css">
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Update Password - @code.scientist x @codingtorque</title>
+</head>
+<body>
+    <div class="card">
+        <p class="lock-icon"><i class="fas fa-lock"></i></p>
+        <h2>Update Password</h2>
+        <input type="password" id="newPassword" placeholder="New Password" minlength="8" maxlength="18">
+        <br>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" minlength="8" maxlength="18">
+        <p id="error-message" class="error-message"></p>
+        <button onclick="updatePassword()">Update Password</button>
+    </div>
+
+    <script src="update.js"></script>
+</body>
+</html>

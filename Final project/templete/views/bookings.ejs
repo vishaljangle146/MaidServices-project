@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking List</title>
+  <link rel="icon" href="./logo.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #13b3f1;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+      font-size: 30px;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(11, 61, 225, 0.84);
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      
+    }
+    li {
+      border-bottom: 1px solid #eee;
+      padding: 20px 0;
+      margin-bottom: 20px;
+      font-size: 18px;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      
+    }
+    strong {
+      font-weight: bold;
+    }
+
+  .container li button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+
+  }
+  .accept-button {
+    background-color: green;
+    color: white;
+  }
+  .reject-button {
+    background-color: red;
+    color: white;
+    justify-content: right;
+
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Booking List</h1>
+    <ul>
+      <% bookings.forEach(booking => { %>
+        <li>
+          <strong>Name:</strong> <%= booking.fname %><br>
+          <strong>Phone Number:</strong> <%= booking.phonenumber %><br>
+          <strong>Date:</strong> <%= booking.date %><br>
+          <strong>Time:</strong> <%= booking.time %><br>
+          <strong>Message:</strong> <%= booking.message %><br>
+          <button class="accept-button"><a href="./accept">Accept</a></button>
+        <button class="reject-button"><a href="./reject">Reject</a></button>
+        </li>
+      <% }); %>
+
+      
+    </ul>
+  </div>
+
+
+  <div id="translate-popup" class="translate-popup">
+    <div id="google_translate_element"></div>
+  </div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,mr', // English, Hindi, Marathi
+      }, 'google_translate_element');
+    }
+
+    document.getElementById('translate-btn').addEventListener('click', function() {
+      var popup = document.getElementById('translate-popup');
+      popup.classList.toggle('show');
+    });
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    window.addEventListener('load', function() {
+    var popup = document.getElementById('translate-popup');
+    if (popup) {
+      popup.style.display = 'block';
+    }
+  });
+  </script>
+
+</body>
+</html>

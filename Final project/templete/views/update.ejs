@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome Icons  -->
+    <link href="./style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./update.css">
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Update Password</title>
+    <link rel="icon" href="./logo.png" type="image/png">
+</head>
+
+<body>
+    <div class="card">
+        <p class="lock-icon"><i class="fas fa-lock"></i></p>
+        <h2>Update Password</h2>
+        <!-- Assuming you have a form for updating the password -->
+        <form action="/updatepassword" method="POST">
+            <input type="password" name="newPassword" placeholder="New Password" required>
+            <input type="password" name="confirmNewPassword" placeholder="Confirm New Password" required>
+            <button type="submit">Update Password</button>
+        </form>
+
+    </div>
+
+    <script src="./update.js"></script>
+
+
+
+    <div id="translate-popup" class="translate-popup">
+        <div id="google_translate_element"></div>
+      </div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+      </script>
+    
+    
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,mr', // English, Hindi, Marathi
+          }, 'google_translate_element');
+        }
+    
+        document.getElementById('translate-btn').addEventListener('click', function() {
+          var popup = document.getElementById('translate-popup');
+          popup.classList.toggle('show');
+        });
+      </script>
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <script>
+        window.addEventListener('load', function() {
+        var popup = document.getElementById('translate-popup');
+        if (popup) {
+          popup.style.display = 'block';
+        }
+      });
+      </script>
+
+    <!-- Template Javascript -->
+    <script src="./main.js"></script>
+
+</body>
+
+</html>

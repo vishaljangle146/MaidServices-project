@@ -1,0 +1,169 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="icon" href="./logo.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .profile {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .profile-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .details p {
+      margin: 5px 0;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .editable input, .editable textarea {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+    }
+
+  </style>
+   <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <h1>Welcome, <%= maidData.name %></h1>
+      <div class="profile-info">
+        <img src="data:<%= maidData.image.contentType %>;base64,<%= maidData.image.data.toString('base64') %>" alt="Profile Picture" class="avatar">
+
+         <% if (maidData) { %>
+    <p>
+      <strong>Name:</strong> <%= maidData.name %><br>
+      <strong>Service:</strong> <%= maidData.service %><br>
+      <strong>City:</strong> <%= maidData.city %><br>
+      <strong>Phone:</strong> <%= maidData.phone %><br>
+      <strong>Gender:</strong> <%= maidData.gender %><br>
+      <strong>Address:</strong> <%= maidData.address %><br>
+      <!-- Display other fields as needed -->
+    </p>
+    <% } else { %>
+      <p>No data found for this user.</p>
+    <% } %>
+      </div>
+
+      <div class="buttons">
+        <button onclick="window.location.href='./updatepro'">Edit Profile</button>
+        <button onclick="window.location.href='./update'">Change Password</button>
+        <button onclick="window.location.href='./home'">Home</button>
+        <button onclick="window.location.href='./index'">Logout</button>
+        
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function toggleEdit() {
+      const infoElements = document.querySelectorAll('.profile-info .details p span');
+      const editableFields = document.querySelectorAll('.editable');
+      const editBtn = document.querySelector('.buttons button:first-of-type');
+
+      if (editBtn.textContent === 'Edit Profile') {
+        editBtn.textContent = 'Save Changes';
+        infoElements.forEach(element => {
+          element.contentEditable = true;
+          element.classList.add('editable');
+        });
+      } else {
+        editBtn.textContent = 'Edit Profile';
+        infoElements.forEach(element => {
+          element.contentEditable = false;
+          element.classList.remove('editable');
+        });
+      }
+    }
+  </script>
+  
+  <div id="translate-popup" class="translate-popup">
+    <div id="google_translate_element"></div>
+  </div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,mr', // English, Hindi, Marathi
+      }, 'google_translate_element');
+    }
+
+    document.getElementById('translate-btn').addEventListener('click', function() {
+      var popup = document.getElementById('translate-popup');
+      popup.classList.toggle('show');
+    });
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    window.addEventListener('load', function() {
+    var popup = document.getElementById('translate-popup');
+    if (popup) {
+      popup.style.display = 'block';
+    }
+  });
+  </script>
+
+<!-- Template Javascript -->
+<script src="./main.js"></script>
+
+</body>
+</html>
+
+

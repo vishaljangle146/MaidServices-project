@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <form action="/loginpage" method="post">
+        <div class="card">
+            <h2>Login</h2>
+            <input type="tel" id="phone-number" placeholder="Phone Number" name="phone" maxlength="10">
+            <br>
+            
+            <input type="password" id="password" placeholder="Password" name="password" minlength="4" maxlength="18">
+            <p id="error-message" class="error-message"></p>
+            <button onclick="login()">Login</button>
+            <span class="psw">Forgot <a href="#" onclick="window.location.href = '../forgot/forgot.html';">password?</a></span>
+        
+        </div>
+    </form>
+
+
+    <script src="login.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="icon" href="./logo.png" type="image/png">
+<link href="./style.css" rel="stylesheet">
+<link href="./signup.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mobileNumber">Mobile Number:</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" title="Please enter a 10-digit phone number" required>
+      </div>
+
+        <div class="form-group">
+          <label for="address">Enter your full address:</label>
+          <input type="text" id="address" name="address" required>
+      </div>
+
+        <div class="form-group">
+            <label for="service">Choose a Service:</label>
+            <select id="service" name="service" >
+                <option value="">Select</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Cooking">Cooking</option>
+                <option value="Babysitting">Babysitting</option>
+                <option value="Garden care tacker">Garden Care Tacker</option>
+                <option value="patient Care Taker">patient Care Taker</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="city">Select a Area:</label>
+            <select id="city" name="city" >
+                <option value="">Select</option>
+                <option value="Ajab Nagar">Ajab Nagar</option>
+                <option value="Aurangabad City - 431001">Aurangabad City - 431001</option>
+                <option value="Shivaji Nagar - 431002">Shivaji Nagar - 431002</option>
+                <option value="Cidco - 431003">Cidco - 431003</option>
+                <option value="Garkheda - 431005">Garkheda - 431005</option>
+                <option value="Garkheda Parisar - 431005">Garkheda Parisar - 431005</option> 
+                <option value="Jyotinagar - 431005">Jyotinagar - 431005</option>
+                <option value="Samarthnagar - 431005">Samarthnagar - 431005</option>
+                <option value="Chikalthana - 431007">Chikalthana - 431007</option>  
+                <option value="Mukundwadi - 431010">Mukundwadi - 431010</option>
+                <option value="Satara Parisar - 431002">Satara Parisar - 431002</option>
+                <option value="Padampura - 431002">Padampura - 431002</option>  
+                <option value="Ghati - 431002">Ghati - 431002</option>
+                <option value="Kranti Chowk - 431001">Kranti Chowk - 431001</option>
+                <option value="CIDCO N-11 - 431003">CIDCO N-11 - 431003</option>  
+                <option value="CIDCO N-9 - 431003">CIDCO N-9 - 431003</option>
+                <option value="Osmanpura - 431005">Osmanpura - 431005</option>
+                <option value="Mahavir Chowk - 431005">Mahavir Chowk - 431005</option>
+                <option value="Cidco - 431003">Cidco - 431003</option>  
+                <option value="New Shreya Nagar - 431001">New Shreya Nagar - 431001</option>
+                <option value="Pundalik Nagar - 431002">Pundalik Nagar - 431002</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Select a Gender:</label>
+          <select id="gender" name="gender" >
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+
+        
+        <div class="form-group2">
+          <input type="submit"  value="Register">
+       </div>
+
+       <!-- <button type="submit" class="form-group2">Register</button> -->
+
+        <a href="./login">Login</a>
+    </form>
+</div>
+
+<div id="translate-popup" class="translate-popup">
+    <div id="google_translate_element"></div>
+  </div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,mr', // English, Hindi, Marathi
+      }, 'google_translate_element');
+    }
+
+    document.getElementById('translate-btn').addEventListener('click', function() {
+      var popup = document.getElementById('translate-popup');
+      popup.classList.toggle('show');
+    });
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    window.addEventListener('load', function() {
+    var popup = document.getElementById('translate-popup');
+    if (popup) {
+      popup.style.display = 'block';
+    }
+  });
+  </script>
+
+</body>
+</html>
+

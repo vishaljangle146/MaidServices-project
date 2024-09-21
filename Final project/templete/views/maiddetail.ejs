@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo.png" type="image/png">
+    <title>Maid Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .maid-details {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .maid-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .details {
+            display: flex;
+            flex-direction: column;
+        }
+        .details p {
+            margin-bottom: 10px;
+        }
+        .details p strong {
+            margin-right: 5px;
+            font-weight: bold;
+        }
+        .maid-details .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .maid-details a {
+            background-color: yellow;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .maid-details a:hover {
+            background-color: #f0e68c; 
+        }
+    </style>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Maid Details</h1>
+    </header>
+    <main>
+        <div class="maid-details">
+            <img src="data:<%= maidData.image.contentType %>;base64,<%= maidData.image.data.toString('base64') %>" alt="Maid Image">
+            <div class="details">
+                <p><strong>Name:</strong> <%= maidData.name %></p>
+                <p><strong>Service:</strong> <%= maidData.service %></p>
+                <p><strong>City:</strong> <%= maidData.city %></p>
+                <p><strong>Phone:</strong> <%= maidData.phone %></p>
+                <p><strong>Gender:</strong> <%= maidData.gender %></p>
+                <p><strong>Address:</strong> <%= maidData.address %></p>
+                <div class="buttons">
+                    <a href="/booked">Booked Here</a>
+                    <a href="/documents">View Documents</a>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <div id="translate-popup" class="translate-popup">
+        <div id="google_translate_element"></div>
+      </div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+      </script>
+    
+    
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,mr', // English, Hindi, Marathi
+          }, 'google_translate_element');
+        }
+    
+        document.getElementById('translate-btn').addEventListener('click', function() {
+          var popup = document.getElementById('translate-popup');
+          popup.classList.toggle('show');
+        });
+      </script>
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <script>
+        window.addEventListener('load', function() {
+        var popup = document.getElementById('translate-popup');
+        if (popup) {
+          popup.style.display = 'block';
+        }
+      });
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maid Booking Status</title>
+<link rel="icon" href="./logo.png" type="image/png">
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        padding: 20px;
+
+    }
+
+    .success-message {
+        background-color: #f10707; 
+        color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+        max-width: 400px;
+    }
+
+    .success-message h2 {
+        margin-top: 0;
+        font-size: 28px; 
+        margin-bottom: 10px;
+    }
+
+    .success-message p {
+        margin-bottom: 20px; 
+        font-size: 18px;
+        line-height: 1.6; 
+        text-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+        font-weight: 300;
+
+    }
+    
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="success-message">
+    <h2>Reject The Application!</h2>
+    <p>You have rejected these application!</p>
+  </div>
+</div>
+
+<script>
+setTimeout(() => {
+    window.location.href = './bookings';
+}, 2000); 
+
+</script>
+</body>
+
+</html>

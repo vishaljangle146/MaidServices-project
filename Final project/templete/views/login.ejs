@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="./logo.png" type="image/png">
+    <title>Login Form</title>
+    <link href="./style.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+            padding-top: 50px; /* Adjust according to your design */
+        }
+
+        .container {
+            background: #fff !important; /* Override Bootstrap background */
+            padding: 30px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            max-width: 400px; /* Adjust width as needed */
+            margin: auto;
+        }
+
+        .container .text-center {
+            font-size: 35px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .container .form-control {
+            font-size: 17px;
+        }
+
+        .container .btn-primary {
+            background-color: #3498db; /* Change background color */
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 100%;
+            height: 55px; /* Increase button size */
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+            transition: all 0.4s;
+        }
+
+        .container .btn-primary:hover {
+            background: -webkit-linear-gradient(left, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+        }
+
+        .container .btn-primary:active {
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+        }
+
+        .container .btn-primary:focus {
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+        }
+
+        .container .btn-primary:disabled {
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+        }
+
+        .container .btn-primary:disabled:hover {
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+        }
+
+        .container .btn-primary:disabled:active {
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+        }
+
+        .container .btn-primary:disabled:focus {
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+        }
+
+
+        .container .btn-link {
+            color: #3498db;
+            text-decoration: none;
+
+        }
+
+        .container .btn-link:hover {
+            text-decoration: underline;
+        }
+
+        .container .btn-link {
+          text-align: center;
+        }
+
+        .container .signup-link {
+          text-align: center;
+        }
+
+        .container .signup-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .container .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5 shadow-lg p-5" style="width:35%">
+    <h2 class="text-center">Login Form</h2>
+
+    <form action="/loginpage" method="post">
+        <div class="mb-3">
+            <label for="exampleInputPhone" class="form-label">Phone number</label>
+            <input type="tel" class="form-control" id="exampleInputPhone" name="phone" pattern="[0-9]{10}" maxlength="10" aria-describedby="phoneHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+        </div>
+        <a href="./send_otp" class="btn btn-link">Forgot Password?</a> <!-- Link to forgot password page -->
+
+        <!--<div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>-->
+        
+
+        <button type="submit" class="btn btn-primary">Login</button>
+
+        <div class="signup-link">
+          Not a member? <a href="./signup">Signup now</a>
+       </div>
+       
+    </form>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+
+<div id="translate-popup" class="translate-popup">
+    <div id="google_translate_element"></div>
+  </div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,mr', // English, Hindi, Marathi
+      }, 'google_translate_element');
+    }
+
+    document.getElementById('translate-btn').addEventListener('click', function() {
+      var popup = document.getElementById('translate-popup');
+      popup.classList.toggle('show');
+    });
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    window.addEventListener('load', function() {
+    var popup = document.getElementById('translate-popup');
+    if (popup) {
+      popup.style.display = 'block';
+    }
+  });
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

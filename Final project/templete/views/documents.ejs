@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uploaded Documents</title>
+<link rel="icon" href="./logo.png" type="image/png">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.uploaded-documents {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.document {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.document h3 {
+  margin-top: 0;
+}
+
+.document img {
+  max-width: 100%;
+  height: auto;
+}
+
+.document embed {
+  width: 100%;
+  height: 300px;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Uploaded Documents</h2>
+    <div class="uploaded-documents">
+      <% if (documents && documents.length > 0) { %>
+        <% documents.forEach((document) => { %>
+          <div class="document">
+            <h3><%= document.name %></h3>
+            <% if (document.contentType.includes('image')) { %>
+              <img src="data:<%= document.contentType %>;base64,<%= document.data.toString('base64') %>" alt="<%= document.name %>">
+            <% } else if (document.contentType.includes('pdf')) { %>
+              <embed src="data:<%= document.contentType %>;base64,<%= document.data.toString('base64') %>" type="application/pdf">
+            <% } else { %>
+              <p>Document type not supported for preview.</p>
+            <% } %>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>No documents uploaded yet.</p>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

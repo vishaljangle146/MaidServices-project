@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./logo.png" type="image/png">
+  <title>Verify OTP</title>
+  <!-- Include the provided CSS -->
+  <link rel="stylesheet" href="./otp.css">
+</head>
+<body>
+  <form method="post" action="/verify">
+    <div class="card"> <!-- Added class "card" -->
+        <div class="row mb-3">
+            <label for="otp" class="col-sm-2 col-form-label">Enter OTP</label>
+            <div class="col-sm-10">
+                <input type="text" class="otpInput" id="otp" name="otp" maxlength="4"> <!-- Added class "otpInput" -->
+            </div>
+        </div>
+        <div class="text-center my-3 mx-5">
+            <button type="submit" class="btn btn-primary">Verify</button>
+        </div>
+    </div>
+  </form>
+</body>
+</html>
